@@ -1,0 +1,92 @@
+[gd_scene load_steps=12 format=3 uid="uid://0qyteaij3dxb"]
+
+[ext_resource type="Texture2D" uid="uid://r3gn7y1jj1y6" path="res://icon.svg" id="1_rxttt"]
+[ext_resource type="PackedScene" uid="uid://x8sw8h0kjdqk" path="res://Scenes/Atom_scenes/Carbon.tscn" id="2_kxxss"]
+[ext_resource type="PackedScene" uid="uid://crjm7llau1com" path="res://Scenes/Atom_scenes/Chlorine.tscn" id="3_nb78j"]
+[ext_resource type="PackedScene" uid="uid://b3yk6my714vtf" path="res://Scenes/Atom_scenes/Hydrogen.tscn" id="4_xw4a7"]
+[ext_resource type="PackedScene" uid="uid://dexk8spa1v7kl" path="res://Scenes/Atom_scenes/Nitrogen.tscn" id="5_7ghs6"]
+[ext_resource type="PackedScene" uid="uid://b62do78ddn5j3" path="res://Scenes/Atom_scenes/Oxygen.tscn" id="6_f3x4l"]
+[ext_resource type="PackedScene" uid="uid://dljoq1qnh1e6s" path="res://Scenes/Atom_scenes/Sodium.tscn" id="7_1gvlq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xg7ip"]
+size = Vector2(52, 470)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7feal"]
+size = Vector2(50, 471)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ta47"]
+size = Vector2(911, 43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o28rq"]
+size = Vector2(912, 42.5)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Left" type="StaticBody2D" parent="."]
+position = Vector2(0.385, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+position = Vector2(157.615, 309)
+shape = SubResource("RectangleShape2D_xg7ip")
+
+[node name="Sprite2D" type="Sprite2D" parent="Left"]
+position = Vector2(155.615, 309)
+scale = Vector2(0.429688, 3.67187)
+texture = ExtResource("1_rxttt")
+
+[node name="Right" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
+position = Vector2(1019, 310)
+shape = SubResource("RectangleShape2D_7feal")
+
+[node name="Sprite2D" type="Sprite2D" parent="Right"]
+position = Vector2(1021, 310)
+scale = Vector2(0.429688, 3.67187)
+texture = ExtResource("1_rxttt")
+
+[node name="Top" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
+position = Vector2(587.5, 70.5)
+shape = SubResource("RectangleShape2D_8ta47")
+
+[node name="Sprite2D" type="Sprite2D" parent="Top"]
+position = Vector2(586, 71)
+scale = Vector2(7.125, 0.359375)
+texture = ExtResource("1_rxttt")
+
+[node name="Bottom" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
+position = Vector2(587, 547)
+shape = SubResource("RectangleShape2D_o28rq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bottom"]
+position = Vector2(584, 549)
+scale = Vector2(7.125, 0.359375)
+texture = ExtResource("1_rxttt")
+
+[node name="Carbon" parent="." instance=ExtResource("2_kxxss")]
+position = Vector2(618, 164)
+scale = Vector2(0.25, 0.25)
+
+[node name="Chlroine" parent="." instance=ExtResource("3_nb78j")]
+position = Vector2(344, 406)
+scale = Vector2(0.25, 0.25)
+
+[node name="Hydrogen" parent="." instance=ExtResource("4_xw4a7")]
+position = Vector2(787, 434)
+scale = Vector2(0.25, 0.25)
+
+[node name="Nitrogen" parent="." instance=ExtResource("5_7ghs6")]
+position = Vector2(287, 182)
+scale = Vector2(0.25, 0.25)
+
+[node name="Oxygen" parent="." instance=ExtResource("6_f3x4l")]
+position = Vector2(796, 205)
+scale = Vector2(0.25, 0.25)
+
+[node name="Sodium" parent="." instance=ExtResource("7_1gvlq")]
+position = Vector2(534, 293)
+scale = Vector2(0.25, 0.25)

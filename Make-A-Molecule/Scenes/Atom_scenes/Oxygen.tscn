@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b62do78ddn5j3"]
+
+[ext_resource type="Script" path="res://Atom.gd" id="1_j27w2"]
+[ext_resource type="Texture2D" uid="uid://3y8mcvobpoon" path="res://Art/Atoms/Oxygen_cropped.png" id="2_crl5i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j1bx4"]
+radius = 118.017
+
+[node name="Oxygen" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_j27w2")
+
+[node name="Atom_Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_crl5i")
+
+[node name="Atom_Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_j1bx4")

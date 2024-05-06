@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dexk8spa1v7kl"]
+
+[ext_resource type="Script" path="res://Atom.gd" id="1_l7iig"]
+[ext_resource type="Texture2D" uid="uid://dhoeepwmvsdls" path="res://Art/Atoms/Nitrogen_cropped.png" id="2_2jyb0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j1bx4"]
+radius = 118.017
+
+[node name="Nitrogen" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_l7iig")
+
+[node name="Atom_Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_2jyb0")
+
+[node name="Atom_Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_j1bx4")

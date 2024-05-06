@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dljoq1qnh1e6s"]
+
+[ext_resource type="Script" path="res://Atom.gd" id="1_ih0u1"]
+[ext_resource type="Texture2D" uid="uid://dhvdu4pa0xn5e" path="res://Art/Atoms/Sodium_cropped.png" id="2_t1mxf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j1bx4"]
+radius = 118.017
+
+[node name="Sodium" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_ih0u1")
+
+[node name="Atom_Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_t1mxf")
+
+[node name="Atom_Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_j1bx4")
