@@ -14,6 +14,10 @@ config/name="Make A Molecule"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Globals="*res://Scripts/Globals.gd"
+
 [rendering]
 
 renderer/rendering_method="mobile"
