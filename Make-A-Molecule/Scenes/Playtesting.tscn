@@ -1,10 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://f5xfi3rnfw2h"]
+[gd_scene load_steps=20 format=3 uid="uid://f5xfi3rnfw2h"]
 
 [ext_resource type="Script" path="res://Scenes/game_manager.gd" id="1_0rtlr"]
 [ext_resource type="Texture2D" uid="uid://y14ov7bun4ex" path="res://Art/Images/Graph_Paper.jpg" id="1_ugpx4"]
 [ext_resource type="Texture2D" uid="uid://dhxkmchhun4ho" path="res://Art/Images/gray_background.jpg" id="2_irrpa"]
 [ext_resource type="Texture2D" uid="uid://dpsmcvqmjcwyi" path="res://Art/Images/Graph_Paper_Black.jpg" id="3_ui3r1"]
 [ext_resource type="PackedScene" uid="uid://c42j7df4djm63" path="res://Scenes/combination_space.tscn" id="4_jgmmp"]
+[ext_resource type="PackedScene" uid="uid://45gy1yo67re2" path="res://UI/ScoreBoard.tscn" id="6_fvw8f"]
+[ext_resource type="PackedScene" uid="uid://cinu4on5ajvjc" path="res://UI/Timer.tscn" id="7_2im5s"]
+[ext_resource type="PackedScene" uid="uid://x8sw8h0kjdqk" path="res://Scenes/Atom_scenes/Carbon.tscn" id="8_7u5oo"]
+[ext_resource type="PackedScene" uid="uid://crjm7llau1com" path="res://Scenes/Atom_scenes/Chlorine.tscn" id="9_qyjg8"]
+[ext_resource type="PackedScene" uid="uid://b3yk6my714vtf" path="res://Scenes/Atom_scenes/Hydrogen.tscn" id="10_dcbpw"]
+[ext_resource type="PackedScene" uid="uid://dexk8spa1v7kl" path="res://Scenes/Atom_scenes/Nitrogen.tscn" id="11_dk8oi"]
+[ext_resource type="PackedScene" uid="uid://b62do78ddn5j3" path="res://Scenes/Atom_scenes/Oxygen.tscn" id="12_50gpd"]
+[ext_resource type="PackedScene" uid="uid://dljoq1qnh1e6s" path="res://Scenes/Atom_scenes/Sodium.tscn" id="13_24b6u"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_7ux0c"]
 b = Vector2(1920, 0)
@@ -84,3 +92,41 @@ centered = false
 
 [node name="Combination_Space" parent="." instance=ExtResource("4_jgmmp")]
 position = Vector2(1600, 250)
+
+[node name="Carbon" parent="." instance=ExtResource("8_7u5oo")]
+position = Vector2(1440, 287)
+scale = Vector2(0.5, 0.5)
+
+[node name="Chlorine" parent="." instance=ExtResource("9_qyjg8")]
+position = Vector2(445, 614)
+scale = Vector2(0.5, 0.5)
+
+[node name="Hydrogen" parent="." instance=ExtResource("10_dcbpw")]
+position = Vector2(1667, 291)
+scale = Vector2(0.5, 0.5)
+
+[node name="Nitrogen" parent="." instance=ExtResource("11_dk8oi")]
+position = Vector2(785, 291)
+scale = Vector2(0.5, 0.5)
+
+[node name="Oxygen" parent="." instance=ExtResource("12_50gpd")]
+position = Vector2(321, 217)
+scale = Vector2(0.5, 0.5)
+
+[node name="Sodium" parent="." instance=ExtResource("13_24b6u")]
+position = Vector2(964, 647)
+scale = Vector2(0.5, 0.5)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScoreBoard" parent="UI" instance=ExtResource("6_fvw8f")]
+layout_mode = 1
+offset_left = 1700.0
+offset_right = 1700.0
+
+[node name="Timer" parent="UI" instance=ExtResource("7_2im5s")]
+layout_mode = 1

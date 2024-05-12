@@ -1,7 +1,7 @@
 extends Control
 
 @onready var label = $Label
-const startTime = 400 
+const startTime = 300 
 @onready var time:float = startTime
 
 # Called when the node enters the scene tree for the first time.
@@ -28,4 +28,4 @@ func formatTime(time:float):
 	return str(minutes) + " : " + str(seconds)
 	
 func updateLabel():
-	label.text = formatTime(time)
+	label.text = "Time: " + formatTime(time)
