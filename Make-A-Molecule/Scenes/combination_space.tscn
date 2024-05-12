@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c42j7df4djm63"]
+
+[ext_resource type="Script" path="res://Scenes/combination_space.gd" id="1_173nh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ffels"]
+size = Vector2(640, 500)
+
+[node name="Combination_Space" type="Node2D"]
+script = ExtResource("1_173nh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+input_pickable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_ffels")
+
+[connection signal="input_event" from="StaticBody2D" to="." method="_on_static_body_2d_input_event"]

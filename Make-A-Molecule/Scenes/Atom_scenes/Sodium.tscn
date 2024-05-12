@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dljoq1qnh1e6s"]
 
-[ext_resource type="Script" path="res://Atom.gd" id="1_ih0u1"]
+[ext_resource type="Script" path="res://Scripts/Atom.gd" id="1_ih0u1"]
 [ext_resource type="Texture2D" uid="uid://dhvdu4pa0xn5e" path="res://Art/Atoms/Sodium_cropped.png" id="2_t1mxf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j1bx4"]
