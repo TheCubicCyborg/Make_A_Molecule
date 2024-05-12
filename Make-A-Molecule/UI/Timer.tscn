@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://cinu4on5ajvjc"]
+
+[ext_resource type="Script" path="res://UI/Timer.gd" id="1_yls6p"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yls6p")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.85
+anchor_right = 0.997
+anchor_bottom = 0.117
+offset_left = -0.200012
+offset_right = -84.5441
+offset_bottom = -37.816
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Time: 5:00 "
