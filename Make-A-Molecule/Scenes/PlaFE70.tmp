@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://f5xfi3rnfw2h"]
+
+[ext_resource type="Script" path="res://Scenes/game_manager.gd" id="1_0rtlr"]
+[ext_resource type="Texture2D" uid="uid://y14ov7bun4ex" path="res://Art/Images/Graph_Paper.jpg" id="1_ugpx4"]
+[ext_resource type="Texture2D" uid="uid://dhxkmchhun4ho" path="res://Art/Images/gray_background.jpg" id="2_irrpa"]
+[ext_resource type="Texture2D" uid="uid://dpsmcvqmjcwyi" path="res://Art/Images/Graph_Paper_Black.jpg" id="3_ui3r1"]
+[ext_resource type="PackedScene" uid="uid://b011ms8p2lqt2" path="res://Scenes/Atom_scenes/Carbon.tscn" id="6_408cx"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7ux0c"]
+b = Vector2(1920, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_eabl1"]
+b = Vector2(0, 1080)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_y061j"]
+a = Vector2(1920, 0)
+b = Vector2(1920, 1080)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_23pyg"]
+a = Vector2(0, 1080)
+b = Vector2(1920, 1080)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_lbaam"]
+a = Vector2(1280, 0)
+b = Vector2(1280, 1080)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xcsjk"]
+a = Vector2(1280, 500)
+b = Vector2(1920, 500)
+
+[node name="GameManager" type="Node2D"]
+script = ExtResource("1_0rtlr")
+
+[node name="Borders" type="Node2D" parent="."]
+
+[node name="Top" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Top"]
+shape = SubResource("SegmentShape2D_7ux0c")
+
+[node name="Left" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Left"]
+shape = SubResource("SegmentShape2D_eabl1")
+
+[node name="Right" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Right"]
+shape = SubResource("SegmentShape2D_y061j")
+
+[node name="Bottom" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Bottom"]
+shape = SubResource("SegmentShape2D_23pyg")
+
+[node name="Middle_Ver" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Middle_Ver"]
+shape = SubResource("SegmentShape2D_lbaam")
+
+[node name="Middle_Hor" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Middle_Hor"]
+shape = SubResource("SegmentShape2D_xcsjk")
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="GraphPaper" type="Sprite2D" parent="Background"]
+position = Vector2(575.563, 564.625)
+scale = Vector2(0.620375, 0.620375)
+texture = ExtResource("1_ugpx4")
+
+[node name="GrayBackground" type="Sprite2D" parent="Background"]
+position = Vector2(1280, 500)
+scale = Vector2(0.281, 0.281)
+texture = ExtResource("2_irrpa")
+centered = false
+
+[node name="GraphPaperBlack" type="Sprite2D" parent="Background"]
+position = Vector2(1280, -82)
+scale = Vector2(1.702, 1.702)
+texture = ExtResource("3_ui3r1")
+centered = false
+
+[node name="Carbon" parent="." instance=ExtResource("6_408cx")]
+position = Vector2(223, 180)

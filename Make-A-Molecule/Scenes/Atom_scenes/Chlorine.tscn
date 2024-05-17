@@ -1,17 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://crjm7llau1com"]
+[gd_scene load_steps=3 format=3 uid="uid://ctf3t102a2qua"]
 
-[ext_resource type="Script" path="res://Scripts/Atom.gd" id="1_srjsi"]
-[ext_resource type="Texture2D" uid="uid://cxn37qskkma3q" path="res://Art/Atoms/Chlorine_cropped.png" id="2_w30ji"]
+[ext_resource type="PackedScene" uid="uid://bnusssweya3r" path="res://Scenes/Atom_scenes/atom.tscn" id="1_vgpp5"]
+[ext_resource type="Texture2D" uid="uid://cxn37qskkma3q" path="res://Art/Atoms/Chlorine_cropped.png" id="2_2siso"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_j1bx4"]
-radius = 118.017
+[node name="Chlorine" instance=ExtResource("1_vgpp5")]
+element = "chlorine"
 
-[node name="Chlorine" type="CharacterBody2D"]
-collision_layer = 2
-script = ExtResource("1_srjsi")
-
-[node name="Atom_Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_w30ji")
-
-[node name="Atom_Collider" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_j1bx4")
+[node name="Atom_sprite" parent="." index="0"]
+texture = ExtResource("2_2siso")

@@ -20,7 +20,7 @@ func Addscore(points:int):
  
 
 func updateLabel(): 
-	label.text = str(score)
+	label.text = "Score: " + str(score)
 	
 func _input(event):
 	if event is InputEventKey and (event as InputEventKey).pressed and(event as InputEventKey).keycode == KEY_SPACE:

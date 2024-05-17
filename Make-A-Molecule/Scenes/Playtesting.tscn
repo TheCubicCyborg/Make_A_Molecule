@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://f5xfi3rnfw2h"]
+[gd_scene load_steps=14 format=3 uid="uid://f5xfi3rnfw2h"]
 
 [ext_resource type="Script" path="res://Scenes/game_manager.gd" id="1_0rtlr"]
 [ext_resource type="Texture2D" uid="uid://y14ov7bun4ex" path="res://Art/Images/Graph_Paper.jpg" id="1_ugpx4"]
 [ext_resource type="Texture2D" uid="uid://dhxkmchhun4ho" path="res://Art/Images/gray_background.jpg" id="2_irrpa"]
 [ext_resource type="Texture2D" uid="uid://dpsmcvqmjcwyi" path="res://Art/Images/Graph_Paper_Black.jpg" id="3_ui3r1"]
-[ext_resource type="PackedScene" uid="uid://c42j7df4djm63" path="res://Scenes/combination_space.tscn" id="4_jgmmp"]
+[ext_resource type="PackedScene" uid="uid://45gy1yo67re2" path="res://UI/ScoreBoard.tscn" id="6_mneh8"]
+[ext_resource type="Texture2D" uid="uid://bdb3qg87qii06" path="res://Art/Images/button.png" id="7_fk5o1"]
+[ext_resource type="PackedScene" uid="uid://cinu4on5ajvjc" path="res://UI/Timer.tscn" id="7_ldu1h"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_7ux0c"]
 b = Vector2(1920, 0)
@@ -82,5 +84,31 @@ scale = Vector2(1.702, 1.702)
 texture = ExtResource("3_ui3r1")
 centered = false
 
-[node name="Combination_Space" parent="." instance=ExtResource("4_jgmmp")]
-position = Vector2(1600, 250)
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 1400.0
+offset_top = 700.0
+offset_right = 1800.0
+offset_bottom = 1100.0
+texture_normal = ExtResource("7_fk5o1")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="ScoreBoard" parent="." instance=ExtResource("6_mneh8")]
+offset_left = 10.0
+offset_right = 10.0
+
+[node name="Timer" parent="." instance=ExtResource("7_ldu1h")]
+offset_left = 1740.0
+offset_right = 1740.0
+
+[node name="Combo_label" type="Label" parent="."]
+offset_left = 1425.0
+offset_top = 575.0
+offset_right = 1775.0
+offset_bottom = 675.0
+theme_override_font_sizes/font_size = 40
+text = "Last Combined:
+"
+horizontal_alignment = 1
+
+[connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]

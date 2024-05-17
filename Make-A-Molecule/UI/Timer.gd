@@ -1,7 +1,7 @@
 extends Control
 
 @onready var label = $Label
-const startTime = 400 
+const startTime = 60
 @onready var time:float = startTime
 
 # Called when the node enters the scene tree for the first time.
@@ -16,16 +16,19 @@ func _process(delta):
 		time -= delta 
 	if time < 0:
 		time = 0
+		Globals.game_manager.lose()
 	updateLabel()
 
-	
-	
+func Addtime(time_add):
+	time += time_add
+	updateLabel()
+
 func formatTime(time:float):
 	var minutes = int(time)/60
 	var seconds = int(time)%60
 	if seconds < 10 : 
-		return str(minutes) + " : 0" + str(seconds)
-	return str(minutes) + " : " + str(seconds)
+		return str(minutes) + ":0" + str(seconds)
+	return str(minutes) + ":" + str(seconds)
 	
 func updateLabel():
-	label.text = formatTime(time)
+	label.text = "Time: " + formatTime(time)
